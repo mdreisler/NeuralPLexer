@@ -620,6 +620,7 @@ class LMDBMsgpackPDBDataset(Dataset, ABC):
         return inplace_to_torch(self.load_from_lmdb(sample_name))
 
 
+#deprecated? unused apparently
 class PDBDataset(Dataset, ABC):
     def __init__(
         self,
@@ -725,6 +726,7 @@ class PDBDataset(Dataset, ABC):
         return inplace_to_torch(self.samples[index])
 
 
+#deprecated as process_sdf is not supported?
 class LBADataset(Dataset, ABC):
     def __init__(self, dataset_path, split_ids, label_name, tokenizer=None):
         super(LBADataset, self).__init__()

@@ -10,7 +10,7 @@ dependencies:
   - python >=3.8
   - pip
   - pytorch >=1.10.0
-  - pytorch-cuda
+  #- pytorch-cuda
   - biopython
   - prody
   - deprecated
@@ -26,10 +26,10 @@ dependencies:
   - numpy
   - openbabel
   - pandas
-  - pytorch3d
+ # - pytorch3d
   - rdkit
   - rmsd
-  - tmalign
+  #- tmalign
   - tensorboard
   - jupyter
   - tqdm
@@ -38,4 +38,6 @@ dependencies:
   - wandb
   - pip:
     - -r requirements.txt
+    - pytorch3d
+    - tmalign
 

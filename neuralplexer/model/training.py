@@ -95,8 +95,14 @@ def setup_pl_trainer(config, gpus=1):
         n_reload = 1
     else:
         n_reload = 0
+
+    if config.cpu_only:
+        accelerator = "cpu"
+    else:
+        accelerator = "gpu"
+
     return pl.Trainer(
-        accelerator="gpu",
+        accelerator=accelerator,
         strategy="ddp",
         devices=gpus,
         auto_select_gpus=True,
