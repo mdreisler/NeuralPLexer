@@ -576,7 +576,8 @@ class LMDBMsgpackPDBDataset(Dataset, ABC):
             df_row = self.split_df.loc[sample_name]
             prot_sample_id = df_row["protein_sample_id"]
             prot_sample = msgpack.unpackb(txn.get(prot_sample_id.encode()))
-            if prot_sample["metadata"]["num_a"] > 1200:
+            #if prot_sample["metadata"]["num_a"] > 1200:
+            if prot_sample["metadata"]["num_a"] > 5000:
                 raise ValueError(
                     f'Too long sequence: {prot_sample["metadata"]["num_a"]}'
                 )
